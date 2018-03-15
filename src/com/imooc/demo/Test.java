@@ -1,6 +1,7 @@
 package com.imooc.demo;
 
 import com.imooc.achieve.*;
+import com.imooc.ifs.IAct;
 
 import java.util.Scanner;
 
@@ -42,12 +43,9 @@ public class Test {
     public static void main(String[] args) {
         Boolean boo = false;
         int a = 0;
+        IAct iAct = null;
         Test test = new Test();
-        Bear bear = new Bear("bill", 1);
-        Monkey monkey = new Monkey("Tom", 1, "金丝猴");
-        Lion lion = new Lion("Lain", 2, "灰色", "公狮");
-        Clown clown = new Clown("Kahle", 5);
-        Parrot parrot = new Parrot("Rose", 1, "牡丹鹦鹉");
+
         while (true) {
             test.actMenu();
             while (true) {
@@ -61,19 +59,24 @@ public class Test {
 
             switch (a) {
                 case 1:
-                    System.out.println(bear.act());
+                    iAct = new Bear("bill", 1);
+                    System.out.println(iAct.act());
                     break;
                 case 2:
-                    System.out.println(lion.act());
+                    iAct = new Lion("Lain", 2, "灰色", "公狮");
+                    System.out.println(iAct.act());
                     break;
                 case 3:
-                    System.out.println(monkey.act());
+                    iAct = new Monkey("Tom", 1, "金丝猴");
+                    System.out.println(iAct.act());
                     break;
                 case 4:
-                    System.out.println(parrot.act());
+                    iAct = new Parrot("Rose", 1, "牡丹鹦鹉");
+                    System.out.println(iAct.act());
                     break;
                 case 5:
-                    System.out.println(clown.act());
+                    iAct = new Clown("Kahle", 5);
+                    System.out.println(iAct.act());
                     break;
 
             }
